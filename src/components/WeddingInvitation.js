@@ -258,7 +258,7 @@ export default function WeddingInvitation() {
           <h3 className="serif-title passes-title">Pases</h3>
           <p className="passes-subtitle">Tenemos reservados</p>
           <div className="passes-count-container">
-            <span className="passes-label">Para vos</span>
+            <span className="passes-label">Para<br />vos</span>
             <div className="passes-number">{numPasses}</div>
             <span className="passes-label">{numPasses === 1 ? "lugar" : "lugares"}</span>
           </div>
@@ -275,16 +275,16 @@ export default function WeddingInvitation() {
           </p>
 
           <div className="tarjeta-details">
-            <div className="tarjeta-price-box">
-              <span className="price-label">VALOR DE LA TARJETA</span>
+            <div className="tarjeta-detail-row">
+              <span className="price-label">VALOR DE LA TARJETA:</span>
               <span className="price-number">$40.000</span>
             </div>
 
-            <div className="tarjeta-transfer-box">
+            <div className="tarjeta-detail-row">
               <span className="transfer-label">ALIAS:</span>
               <span className="transfer-alias">EUNICERUIZ98</span>
               <button className="copy-button" onClick={handleCopyAlias}>
-                <CopyIcon /> {copied ? "¡Copiado!" : "Copiar Alias"}
+                <CopyIcon /> {copied ? "¡Copiado!" : "Copiar"}
               </button>
             </div>
           </div>
