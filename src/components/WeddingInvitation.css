@@ -289,13 +289,13 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   flex: 1;
-  text-align: center;
+  text-align: right;
   border-bottom: 2px solid var(--gold-accent);
   padding-bottom: 6px;
 }
 
 .date-side-text.year {
-  text-align: center;
+  text-align: left;
 }
 
 .date-center-wrapper {
@@ -319,6 +319,15 @@ body {
   color: var(--primary-color);
   line-height: 0.9;
 }
+
+.date-footnote {
+  font-size: min(1.9vh, 0.85rem);
+  font-weight: 700;
+  color: var(--gold-accent);
+  margin-top: min(1vh, 0.4rem);
+  letter-spacing: 1.5px;
+}
+
 
 .countdown-card {
   background-color: #ffffff;
@@ -515,6 +524,7 @@ body {
   padding: 0.4rem 1.5rem;
   border-radius: 8px;
   border: 1px solid rgba(125, 133, 96, 0.25);
+  width: 100%;
 }
 
 .passes-number {
@@ -648,6 +658,10 @@ body {
   border: 1px solid rgba(125, 133, 96, 0.25);
 }
 
+.dress-rsvp-section-snap .dress-code-card {
+  margin-top: auto;
+}
+
 .dress-code-row {
   font-size: min(2vh, 0.85rem);
 }
@@ -710,7 +724,8 @@ body {
 
 .invitation-footer {
   position: relative;
-  margin-top: min(1.5vh, 0.6rem);
+  margin-top: auto;
+  margin-bottom: min(3vh, 1.2rem);
   width: 100%;
   padding: 0.2rem 1rem;
   text-align: center;

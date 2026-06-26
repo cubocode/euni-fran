@@ -238,7 +238,7 @@ export default function WeddingInvitation() {
               <div className="date-side-text year">2026</div>
             </div>
           </div>
-          <p className="passes-footnote">20 Hs</p>
+          <p className="date-footnote">20 Hs</p>
         </div>
 
         <div className="location-card">
@@ -252,7 +252,7 @@ export default function WeddingInvitation() {
             className="primary-button"
             style={{ marginTop: '0.8rem' }}
           >
-            Ver Ubicación
+            Cómo llegar
           </a>
         </div>
       </section>
