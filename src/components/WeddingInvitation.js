@@ -238,7 +238,7 @@ export default function WeddingInvitation() {
               <div className="date-side-text year">2026</div>
             </div>
           </div>
-          <p className="date-footnote">20 Hs</p>
+          <p className="date-footnote">20:00 Hs</p>
         </div>
 
         <div className="location-card">
