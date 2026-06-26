@@ -171,11 +171,48 @@ export default function WeddingInvitation() {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
-  // Copy Alias Handler
+  // Copy Alias Handler with bulletproof fallback
   const handleCopyAlias = () => {
-    navigator.clipboard.writeText("EUNICERUIZ98");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    const aliasText = "EUNICERUIZ98";
+    
+    const triggerSuccess = () => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(aliasText)
+        .then(triggerSuccess)
+        .catch((err) => {
+          console.error("navigator.clipboard failed, trying fallback: ", err);
+          fallbackCopyText(aliasText, triggerSuccess);
+        });
+    } else {
+      fallbackCopyText(aliasText, triggerSuccess);
+    }
+  };
+
+  const fallbackCopyText = (text, onSuccess) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        onSuccess();
+      } else {
+        console.error("Fallback copy command unsuccessful");
+      }
+    } catch (err) {
+      console.error("Fallback copy execution error: ", err);
+    }
+    document.body.removeChild(textArea);
   };
 
   return (
