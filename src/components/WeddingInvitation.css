@@ -1,12 +1,12 @@
 /* Color palette and variables */
 :root {
   --primary-color: #2c3319;
-  --secondary-color: #7d8560;
-  --gold-accent: #b89154;
+  --secondary-color: #596139;
+  --gold-accent: #8f621f;
   --bg-color: #f4f3ea;
   --card-bg: #ffffff;
   --text-dark: #1e2210;
-  --text-light: #5a613f;
+  --text-light: #43482d;
   --font-script: 'Alex Brush', cursive;
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
@@ -336,7 +336,7 @@ body {
   left: 6px;
   right: 6px;
   bottom: 6px;
-  border: 1px solid rgba(184, 145, 84, 0.3);
+  border: 1px solid rgba(143, 98, 31, 0.3);
   border-radius: 8px;
   pointer-events: none;
 }
@@ -396,7 +396,7 @@ body {
   background-color: #ffffff;
   padding: min(2.5vh, 1.6rem) 1.5rem;
   border-radius: 12px;
-  border: 1px solid rgba(184, 145, 84, 0.3);
+  border: 1px solid rgba(143, 98, 31, 0.3);
   box-shadow: 0 10px 30px rgba(44, 51, 25, 0.08);
   width: 90%;
   max-width: 360px;
@@ -417,7 +417,7 @@ body {
   left: 6px;
   right: 6px;
   bottom: 6px;
-  border: 1px dashed rgba(184, 145, 84, 0.35);
+  border: 1px dashed rgba(143, 98, 31, 0.35);
   border-radius: 8px;
   pointer-events: none;
 }
