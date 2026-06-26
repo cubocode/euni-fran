@@ -122,11 +122,10 @@ export default function WeddingInvitation() {
   }, []);
 
   // Custom share or confirmation trigger via WhatsApp
-  const handleConfirmRSVP = () => {
-    const phoneNumber = "5493863412345"; // Couple's WhatsApp number
+  const handleConfirmRSVP = (phoneNumber) => {
     const placesText = numPasses === 1 ? "1 lugar" : `${numPasses} lugares`;
     const message = encodeURIComponent(
-      `¡Hola Eunice y Franco! Con mucho amor confirmo mi asistencia (${placesText}) para su hermosa boda el próximo Sábado 10 de Octubre de 2026. ¡Nos vemos pronto!`
+      `¡Hola! Con mucho amor confirmo mi asistencia (${placesText}) para su hermosa boda el próximo Sábado 10 de Octubre de 2026. ¡Nos vemos pronto!`
     );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
@@ -312,11 +311,16 @@ export default function WeddingInvitation() {
           <WhatsappIcon />
           <h3 className="serif-title rsvp-title">Confirmación</h3>
           <p className="rsvp-description">
-            Agradecemos que confirmes tu asistencia antes del 10 de Septiembre de 2026
+            Agradecemos que confirmes tu asistencia antes del 20 de Septiembre
           </p>
-          <button className="primary-button" onClick={handleConfirmRSVP}>
-            Enviar Mensaje
-          </button>
+          <div className="rsvp-buttons-container">
+            <button className="primary-button rsvp-btn" onClick={() => handleConfirmRSVP("5493865264241")}>
+              A Eunice
+            </button>
+            <button className="primary-button rsvp-btn" onClick={() => handleConfirmRSVP("5493865665987")}>
+              A Franco
+            </button>
+          </div>
         </div>
 
         <footer className="invitation-footer">
