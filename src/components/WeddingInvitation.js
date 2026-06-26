@@ -130,7 +130,7 @@ const calculateTimeLeft = () => {
 // Robust parsing of guest passes from path or query string
 const getNumPasses = () => {
   if (typeof window === 'undefined') return 1;
-  
+
   // 1. Try URL path (e.g. localhost:3001/2)
   const path = window.location.pathname.replace(/^\/+/, '');
   let passes = parseInt(path, 10);
@@ -271,11 +271,11 @@ export default function WeddingInvitation() {
         <CornerEucalyptusLeft />
         <CornerEucalyptusRight />
         <div className="location-card">
-          <span className="location-time">RECEPCIÓN</span>
+          <span className="location-time">CEREMONIA</span>
           <h3 className="serif-title location-title">Salón Habibi</h3>
           <h4 className="location-subtitle">Villa Quinteros</h4>
           <p className="location-address">
-            Tucumán, Argentina
+            20 Hs
           </p>
           <a
             href="https://maps.google.com/?q=Salon+Habibi+Villa+Quinteros"
@@ -297,7 +297,7 @@ export default function WeddingInvitation() {
           <h3 className="serif-title passes-title">Pases</h3>
           <p className="passes-subtitle">Tenemos reservados</p>
           <div className="passes-count-container">
-            <span className="passes-label">Para ti</span>
+            <span className="passes-label">Para vos</span>
             <div className="passes-number">{numPasses}</div>
             <span className="passes-label">{numPasses === 1 ? "lugar" : "lugares"}</span>
           </div>
@@ -315,7 +315,7 @@ export default function WeddingInvitation() {
           <TicketIconCard />
           <h3 className="serif-title tarjeta-title">Tarjetas</h3>
           <p className="tarjeta-text">
-            Su presencia hará que este día sea inolvidable. Para confirmar su lugar, les solicitamos realizar la compra de la tarjeta de ingreso. Recomendamos adquirirla con anticipación para asegurar el precio actual.
+            Tu presencia hará que este día sea inolvidable. Para confirmar su lugar, les solicitamos realizar la compra de la tarjeta de ingreso. Recomendamos adquirirla con anticipación para asegurar el precio actual.
           </p>
 
           <div className="tarjeta-details">
@@ -325,7 +325,7 @@ export default function WeddingInvitation() {
             </div>
 
             <div className="tarjeta-transfer-box">
-              <span className="transfer-label">ALIAS DE TRANSFERENCIA</span>
+              <span className="transfer-label">ALIAS:</span>
               <span className="transfer-alias">EUNICERUIZ98</span>
               <button className="copy-button" onClick={handleCopyAlias}>
                 <CopyIcon /> {copied ? "¡Copiado!" : "Copiar Alias"}
@@ -345,7 +345,7 @@ export default function WeddingInvitation() {
           <span className="dress-code-highlight">ELEGANTE</span>
           <div className="dress-code-details">
             <p className="dress-code-row">
-              <strong>Damas:</strong> evitar tonos de blanco o beige
+              <strong>Damas:</strong> Evitar tonos de blanco o beige
             </p>
             <p className="dress-code-row">
               <strong>Caballeros:</strong> Traje
@@ -370,7 +370,7 @@ export default function WeddingInvitation() {
         </button>
       </section>
 
-      {/* 9. Aclaración y Cierre */}
+      {/* 9. Aclaración y Cierre 
       <section className="closing-section snap-section">
         <CornerEucalyptusLeft />
         <CornerEucalyptusRight />
@@ -386,7 +386,7 @@ export default function WeddingInvitation() {
           Esperamos contar con su presencia
         </p>
       </section>
-
+*/}
       {/* 10. Segunda Fotografía + Footer */}
       <section className="photo-wrapper snap-section">
         <TornPaperEdgeTop />
