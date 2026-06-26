@@ -28,13 +28,7 @@ const EucalyptusBranchRight = () => (
   </svg>
 );
 
-const SmallLeafDivider = () => (
-  <svg viewBox="0 0 100 40" className="small-leaf-divider">
-    <path d="M10,20 C35,20 65,20 90,20" fill="none" stroke="#4a4f30" strokeWidth="1" opacity="0.4" />
-    <path d="M50,20 C42,10 32,15 35,20 C32,25 42,30 50,20 Z" fill="#9da389" opacity="0.8" />
-    <path d="M50,20 C58,10 68,15 65,20 C68,25 58,30 50,20 Z" fill="#4a4f30" opacity="0.7" />
-  </svg>
-);
+
 
 const TornPaperEdgeTop = () => (
   <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="torn-edge torn-edge-top">
@@ -174,7 +168,7 @@ export default function WeddingInvitation() {
   // Copy Alias Handler with bulletproof fallback
   const handleCopyAlias = () => {
     const aliasText = "EUNICERUIZ98";
-    
+
     const triggerSuccess = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
