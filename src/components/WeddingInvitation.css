@@ -504,7 +504,8 @@ body {
   font-weight: 600;
 }
 
-.passes-count-container {
+.passes-count-container,
+.date-count-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -708,9 +709,8 @@ body {
 }
 
 .invitation-footer {
-  position: absolute;
-  bottom: min(1.5vh, 0.5rem);
-  left: 0;
+  position: relative;
+  margin-top: min(1.5vh, 0.6rem);
   width: 100%;
   padding: 0.2rem 1rem;
   text-align: center;
@@ -890,7 +890,8 @@ body {
     padding: 0.25rem 0.5rem;
     font-size: 0.58rem;
   }
-  .passes-count-container {
+  .passes-count-container,
+  .date-count-container {
     margin: 0.4rem 0;
     padding: 0.3rem 1.2rem;
   }
@@ -958,7 +959,6 @@ body {
     margin-bottom: 0.3rem;
   }
   .invitation-footer {
-    position: absolute;
-    bottom: 2px;
+    margin-top: 0.2rem;
   }
 }

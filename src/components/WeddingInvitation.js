@@ -30,6 +30,12 @@ const CopyIcon = () => (
   </svg>
 );
 
+const CheersIcon = () => (
+  <svg viewBox="0 0 24 24" width="32" height="32" className="section-icon">
+    <path fill="currentColor" d="M11 20H4c-.55 0-1-.45-1-1s.45-1 1-1h3v-3.08C5.22 14.39 4 12.33 4 10V4c0-.55.45-1 1-1h5c.55 0 1 .45 1 1v6c0 2.33-1.22 4.39-3 4.92V18h3c.55 0 1 .45 1 1s-.45 1-1 1zM5 5v5c0 1.1.9 2 2 2s2-.9 2-2V5H5zm15 15h-7c-.55 0-1-.45-1-1s.45-1 1-1h3v-3.08c-1.78-.53-3-2.59-3-4.92V4c0-.55.45-1 1-1h5c.55 0 1 .45 1 1v6c0 2.33-1.22 4.39-3 4.92V18h3c.55 0 1 .45 1 1s-.45 1-1 1zm-5-15v5c0 1.1.9 2 2 2s2-.9 2-2V5h-4z" />
+  </svg>
+);
+
 const WhatsappIcon = () => (
   <svg viewBox="0 0 24 24" width="32" height="32" className="section-icon">
     <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.17 8.17 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.46 0-2.9-.39-4.16-1.13l-.3-.18-3.09.81.83-3.01-.2-.31a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.23 8.24-8.23zm-3.61 3.41c-.2 0-.33.07-.46.22-.13.15-.51.5-.51 1.22s.53 1.42.6 1.52c.07.1 1.04 1.59 2.53 2.24.35.15.63.25.85.32.36.11.68.1.94.06.29-.04.9-.37 1.03-.72.13-.35.13-.66.09-.72-.04-.06-.14-.1-.3-.18-.16-.08-.94-.47-1.09-.52-.15-.05-.26-.08-.37.09-.11.17-.43.54-.53.65-.1.11-.2.13-.36.05-.16-.08-.68-.25-1.29-.8-0.48-.43-.8-0.95-.9-1.11-.1-.17-.01-.26.07-.34.08-.08.17-.2.25-.3.08-.1.11-.17.17-.29.06-.12.03-.22-.01-.3-.04-.08-.37-.9-.51-1.24-.14-.34-.28-.29-.37-.3z" />
@@ -219,18 +225,20 @@ export default function WeddingInvitation() {
         <CornerEucalyptusRight />
 
         <div className="date-card">
-          <span className="location-time">CEREMONIA</span>
-          <div className="date-highlight-container">
-            <div className="date-side-text">Sábado</div>
-            <div className="date-center-wrapper">
-              <span className="date-month">Octubre</span>
-              <span className="date-day">10</span>
+          <CheersIcon />
+          <h3 className="serif-title passes-title">Ceremonia</h3>
+          <p className="passes-subtitle">Te esperamos para celebrar</p>
+          <div className="date-count-container">
+            <div className="date-highlight-container">
+              <div className="date-side-text">Sábado</div>
+              <div className="date-center-wrapper">
+                <span className="date-month">Octubre</span>
+                <span className="date-day">10</span>
+              </div>
+              <div className="date-side-text year">2026</div>
             </div>
-            <div className="date-side-text year">2026</div>
           </div>
-          <p className="location-address" style={{ marginBottom: 0, marginTop: '0.5rem' }}>
-            20 Hs
-          </p>
+          <p className="passes-footnote">20 Hs</p>
         </div>
 
         <div className="location-card">
