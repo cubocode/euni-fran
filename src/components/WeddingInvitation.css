@@ -13,7 +13,6 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Global scroll behavior and box model */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +30,6 @@ body {
   overflow: hidden;
 }
 
-/* Mobile-first card wrapper with scroll snapping */
 .invitation-container {
   width: 100%;
   max-width: 480px;
@@ -56,7 +54,6 @@ body {
   scrollbar-width: none;
 }
 
-/* Base style for every snapped viewport-height slide */
 .snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -71,13 +68,13 @@ body {
   align-items: center;
   text-align: center;
   flex-shrink: 0;
-  padding: 2rem 1.5rem;
+  padding: min(4vh, 2rem) 1.5rem;
+  gap: min(2.5vh, 1.2rem);
   background:
     url('https://www.transparenttextures.com/patterns/linen-paper.png'),
     linear-gradient(180deg, #fbfbf9 0%, #f1efe3 100%);
 }
 
-/* Typography styles */
 .serif-title {
   font-family: var(--font-serif);
   font-weight: 700;
@@ -91,11 +88,10 @@ body {
 .script-text {
   font-family: var(--font-script);
   font-weight: 400;
-  color: var(--gold-accent);
+  color: white;
   text-align: center;
 }
 
-/* Corner foliage watermarks */
 .corner-decor {
   position: absolute;
   width: min(28vw, 110px);
@@ -115,7 +111,6 @@ body {
   right: 0;
 }
 
-/* 1. Header Section (Cabecera) */
 .header-section {
   background-size: cover;
   background-position: center;
@@ -181,7 +176,6 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* Torn paper edge overlays for photos */
 .photo-wrapper {
   position: relative;
   width: 100%;
@@ -212,7 +206,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* 2. Presentation Section (Presentación de los Novios) */
 .presentation-section {
   text-align: center;
   gap: min(2.2vh, 1.2rem);
@@ -257,7 +250,7 @@ body {
 
 .couple-connector {
   font-size: min(5vh, 2.2rem);
-  color: var(--secondary-color);
+  color: white;
 }
 
 .leaf-decor-left {
@@ -277,13 +270,13 @@ body {
   transform: rotate(190deg) scaleY(-1);
 }
 
-/* Elegant Date section */
 .date-highlight-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 90%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .date-side-text {
@@ -294,13 +287,13 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   flex: 1;
-  text-align: right;
+  text-align: center;
   border-bottom: 2px solid var(--gold-accent);
   padding-bottom: 6px;
 }
 
 .date-side-text.year {
-  text-align: left;
+  text-align: center;
 }
 
 .date-center-wrapper {
@@ -325,7 +318,6 @@ body {
   line-height: 0.9;
 }
 
-/* Countdown Timer card styling */
 .countdown-card {
   background-color: #ffffff;
   padding: min(2.5vh, 1.8rem) 1.5rem min(1.8vh, 1.2rem) 1.5rem;
@@ -394,26 +386,30 @@ body {
   margin-bottom: 0.6rem;
 }
 
-/* Premium Card Frame Style */
 .location-card,
+.date-card,
 .tarjeta-card,
 .dress-code-card,
 .passes-card,
+.rsvp-card,
 .adults-only-box {
   background-color: #ffffff;
-  padding: min(3.5vh, 2.4rem) 1.8rem;
+  padding: min(2.5vh, 1.6rem) 1.5rem;
   border-radius: 12px;
   border: 1px solid rgba(184, 145, 84, 0.3);
-  box-shadow: 0 12px 35px rgba(44, 51, 25, 0.08);
-  width: 100%;
+  box-shadow: 0 10px 30px rgba(44, 51, 25, 0.08);
+  width: 90%;
   max-width: 360px;
   position: relative;
+  z-index: 2;
 }
 
 .location-card::after,
+.date-card::after,
 .tarjeta-card::after,
 .dress-code-card::after,
 .passes-card::after,
+.rsvp-card::after,
 .adults-only-box::after {
   content: '';
   position: absolute;
@@ -429,16 +425,19 @@ body {
 .section-icon {
   fill: var(--primary-color);
   color: var(--primary-color);
-  margin-bottom: 0.6rem;
+  margin-bottom: min(1.2vh, 0.5rem);
 }
 
-/* 3. Location Section */
 .location-time {
   font-size: min(2vh, 0.85rem);
   font-weight: 700;
   color: var(--gold-accent);
   letter-spacing: 2.5px;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .location-title {
@@ -458,7 +457,7 @@ body {
   font-size: min(2vh, 0.95rem);
   font-weight: 500;
   color: var(--text-dark);
-  margin-bottom: 1.8rem;
+  margin-bottom: min(1.5vh, 0.6rem);
 }
 
 .primary-button {
@@ -489,7 +488,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* 4. Passes Card Section */
 .passes-title {
   font-size: min(3vh, 1.4rem);
   font-weight: 700;
@@ -508,9 +506,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin: 1.2rem 0;
+  margin: min(1.5vh, 0.5rem) 0;
   background-color: #f6f7f3;
-  padding: 0.6rem 2rem;
+  padding: 0.4rem 1.5rem;
   border-radius: 8px;
   border: 1px solid rgba(125, 133, 96, 0.25);
 }
@@ -537,28 +535,43 @@ body {
   font-style: italic;
 }
 
-/* 5. Tarjetas Section */
 .tarjeta-title {
   font-size: min(3vh, 1.4rem);
   font-weight: 700;
 }
 
 .tarjeta-text {
-  font-size: min(1.9vh, 0.8rem);
-  line-height: 1.6;
+  font-size: min(1.8vh, 0.75rem);
+  line-height: 1.5;
   color: var(--text-dark);
-  margin-bottom: 1.2rem;
+  margin-bottom: min(1.5vh, 0.6rem);
 }
 
 .tarjeta-details {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
   width: 100%;
   background-color: #f6f7f3;
-  padding: 1rem;
+  padding: min(1.5vh, 0.8rem);
   border-radius: 8px;
   border: 1px solid rgba(125, 133, 96, 0.25);
+}
+
+.tarjeta-price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.tarjeta-transfer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .price-label,
@@ -573,7 +586,6 @@ body {
 .price-number {
   font-family: var(--font-serif);
   font-size: 1.45rem;
-  /* Ajustado de 1.8rem */
   font-weight: 700;
   color: var(--primary-color);
 }
@@ -581,7 +593,6 @@ body {
 .transfer-alias {
   font-family: var(--font-serif);
   font-size: 1.15rem;
-  /* Ajustado de 1.3rem */
   font-weight: 700;
   color: var(--gold-accent);
   letter-spacing: 0.5px;
@@ -611,7 +622,6 @@ body {
   background-color: var(--gold-accent);
 }
 
-/* 6. Dress Code Section */
 .dress-code-title {
   font-size: min(3vh, 1.4rem);
   font-weight: 700;
@@ -619,20 +629,20 @@ body {
 
 .dress-code-highlight {
   font-family: var(--font-serif);
-  font-size: min(4vh, 2rem);
+  font-size: min(3.5vh, 1.8rem);
   font-weight: 700;
   letter-spacing: 4px;
   color: var(--gold-accent);
-  margin-bottom: 1rem;
+  margin-bottom: min(1.5vh, 0.5rem);
 }
 
 .dress-code-details {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
   width: 100%;
   background-color: #f6f7f3;
-  padding: 1rem;
+  padding: min(1.5vh, 0.8rem);
   border-radius: 8px;
   border: 1px solid rgba(125, 133, 96, 0.25);
 }
@@ -641,7 +651,6 @@ body {
   font-size: min(2vh, 0.85rem);
 }
 
-/* 7. RSVP Section (Confirmación) */
 .rsvp-icon svg {
   width: min(4vh, 1.8rem);
   height: min(4vh, 1.8rem);
@@ -655,13 +664,12 @@ body {
 }
 
 .rsvp-description {
-  font-size: min(2vh, 0.8rem);
-  line-height: 1.6;
+  font-size: min(1.9vh, 0.78rem);
+  line-height: 1.5;
   color: var(--text-dark);
-  margin-bottom: 1.2rem;
+  margin-bottom: min(1.5vh, 0.6rem);
 }
 
-/* 8. Adults Only & Cierre */
 .adults-only-box {
   max-width: 330px;
   margin-bottom: 1.2rem;
@@ -686,53 +694,48 @@ body {
   letter-spacing: 2px;
 }
 
-/* Footer Section Overlay */
 .invitation-footer {
   position: absolute;
-  bottom: 0;
+  bottom: min(1.5vh, 0.5rem);
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 80%, transparent 100%);
-  padding: 3rem 1rem 1.2rem;
+  padding: 0.2rem 1rem;
   text-align: center;
-  color: #ffffff;
+  color: var(--text-light);
   z-index: 10;
+  background: transparent;
 }
 
 .footer-copyright {
-  font-size: 0.7rem;
-  letter-spacing: 1.5px;
+  font-size: 0.65rem;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-bottom: 0.3rem;
-  opacity: 0.9;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.2rem;
+  opacity: 0.8;
 }
 
 .footer-dev {
-  font-size: 0.65rem;
-  letter-spacing: 1px;
-  opacity: 0.85;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 0.6rem;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
 }
 
 .dev-link {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: var(--transition);
 }
 
 .dev-link:hover {
-  color: #ffffff;
+  color: var(--gold-accent);
   text-decoration: underline;
 }
 
-/* Animations and tweaks */
 .scroll-arrow {
   color: var(--gold-accent);
 }
 
-/* Fade-in scroll animations utility */
 .animate-fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -803,7 +806,6 @@ body {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 360px) {
   .couple-names {
     font-size: 3.2rem;
@@ -822,10 +824,87 @@ body {
   }
 
   .location-card,
+  .date-card,
   .tarjeta-card,
   .dress-code-card,
   .passes-card,
+  .rsvp-card,
   .adults-only-box {
-    padding: 1.5rem 1.2rem;
+    padding: 1.2rem 1rem;
+  }
+}
+
+/* Responsive adjustments for low-height mobile viewports */
+@media (max-height: 750px) {
+  .snap-section {
+    padding: min(2.5vh, 1.2rem) 1.2rem;
+    gap: min(1.8vh, 0.8rem);
+  }
+  .location-card,
+  .date-card,
+  .tarjeta-card,
+  .dress-code-card,
+  .passes-card,
+  .rsvp-card,
+  .adults-only-box {
+    padding: min(2.2vh, 1.2rem) 1.2rem;
+  }
+  .section-icon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 0.3rem;
+  }
+  .primary-button {
+    padding: 0.6rem 1.8rem;
+  }
+  .tarjeta-details {
+    padding: 0.6rem;
+    gap: 0.5rem;
+  }
+  .passes-count-container {
+    margin: 0.6rem 0;
+    padding: 0.4rem 1.5rem;
+  }
+}
+
+@media (max-height: 650px) {
+  .snap-section {
+    padding: min(2vh, 0.8rem) 1rem;
+    gap: min(1.5vh, 0.6rem);
+  }
+  .location-card,
+  .date-card,
+  .tarjeta-card,
+  .dress-code-card,
+  .passes-card,
+  .rsvp-card,
+  .adults-only-box {
+    padding: min(1.8vh, 0.95rem) 1rem;
+  }
+  .location-title {
+    font-size: 1.2rem;
+  }
+  .location-subtitle {
+    font-size: 1rem;
+  }
+  .location-address {
+    margin-bottom: 0.8rem;
+  }
+  .passes-number {
+    font-size: 2.2rem;
+  }
+  .dress-code-highlight {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .tarjeta-text {
+    margin-bottom: 0.6rem;
+    font-size: 0.75rem;
+  }
+  .price-number {
+    font-size: 1.2rem;
+  }
+  .transfer-alias {
+    font-size: 1rem;
   }
 }

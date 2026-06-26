@@ -1,45 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './WeddingInvitation.css';
 
-// SVG Decorative Components
-const EucalyptusBranchLeft = () => (
-  <svg viewBox="0 0 100 120" className="leaf-decor-left" style={{ height: 'auto' }}>
-    {/* Stem */}
-    <path d="M10,110 C25,85 45,50 65,10" fill="none" stroke="#4a4f30" strokeWidth="1.5" opacity="0.5" />
-    {/* Leaves */}
-    <path d="M20,95 C12,82 5,87 8,98 C11,109 23,105 20,95 Z" fill="#9da389" opacity="0.8" />
-    <path d="M35,75 C25,62 18,68 22,78 C26,88 38,82 35,75 Z" fill="#4a4f30" opacity="0.7" />
-    <path d="M48,55 C38,42 32,48 35,58 C38,68 50,62 48,55 Z" fill="#9da389" opacity="0.85" />
-    <path d="M60,35 C52,22 45,28 48,38 C51,48 62,42 60,35 Z" fill="#9da389" opacity="0.7" />
-    <path d="M65,15 C58,5 52,10 55,18 C58,26 68,22 65,15 Z" fill="#4a4f30" opacity="0.6" />
-  </svg>
-);
-
-const EucalyptusBranchRight = () => (
-  <svg viewBox="0 0 100 120" className="leaf-decor-right" style={{ height: 'auto' }}>
-    {/* Stem */}
-    <path d="M10,110 C25,85 45,50 65,10" fill="none" stroke="#4a4f30" strokeWidth="1.5" opacity="0.5" />
-    {/* Leaves */}
-    <path d="M20,95 C12,82 5,87 8,98 C11,109 23,105 20,95 Z" fill="#4a4f30" opacity="0.75" />
-    <path d="M35,75 C25,62 18,68 22,78 C26,88 38,82 35,75 Z" fill="#9da389" opacity="0.8" />
-    <path d="M48,55 C38,42 32,48 35,58 C38,68 50,62 48,55 Z" fill="#4a4f30" opacity="0.65" />
-    <path d="M60,35 C52,22 45,28 48,38 C51,48 62,42 60,35 Z" fill="#9da389" opacity="0.85" />
-    <path d="M65,15 C58,5 52,10 55,18 C58,26 68,22 65,15 Z" fill="#9da389" opacity="0.6" />
-  </svg>
-);
 
 
-
-const TornPaperEdgeTop = () => (
-  <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="torn-edge torn-edge-top">
-    <path d="M0,0 L0,60 L15,45 L32,70 L48,50 L64,75 L80,55 L96,65 L112,42 L128,80 L144,58 L160,68 L176,48 L192,75 L208,52 L224,70 L240,42 L256,78 L272,48 L288,62 L304,42 L320,80 L336,52 L352,68 L368,48 L384,75 L400,52 L416,68 L432,48 L448,78 L464,52 L480,62 L496,42 L512,80 L528,52 L544,68 L560,48 L576,75 L592,52 L608,68 L624,48 L640,78 L656,52 L672,62 L688,42 L704,80 L720,52 L736,68 L752,48 L768,75 L784,52 L800,68 L816,48 L832,78 L848,52 L864,62 L880,42 L896,80 L912,52 L928,68 L944,48 L960,75 L976,52 L992,68 L1008,48 L1024,78 L1040,52 L1056,62 L1072,42 L1088,80 L1104,52 L1120,68 L1136,48 L1152,75 L1168,52 L1184,68 L1200,42 L1200,0 Z" />
-  </svg>
-);
-
-// Location icon SVG
-const PinIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+const PinIconCard = () => (
+  <svg viewBox="0 0 24 24" width="32" height="32" className="section-icon">
+    <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
   </svg>
 );
 
@@ -65,8 +31,8 @@ const CopyIcon = () => (
 );
 
 const WhatsappIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.17 8.17 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.46 0-2.9-.39-4.16-1.13l-.3-.18-3.09.81.83-3.01-.2-.31a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.23 8.24-8.23zm-3.61 3.41c-.2 0-.33.07-.46.22-.13.15-.51.5-.51 1.22s.53 1.42.6 1.52c.07.1 1.04 1.59 2.53 2.24.35.15.63.25.85.32.36.11.68.1.94.06.29-.04.9-.37 1.03-.72.13-.35.13-.66.09-.72-.04-.06-.14-.1-.3-.18-.16-.08-.94-.47-1.09-.52-.15-.05-.26-.08-.37.09-.11.17-.43.54-.53.65-.1.11-.2.13-.36.05-.16-.08-.68-.25-1.29-.8-0.48-.43-.8-0.95-.9-1.11-.1-.17-.01-.26.07-.34.08-.08.17-.2.25-.3.08-.1.11-.17.17-.29.06-.12.03-.22-.01-.3-.04-.08-.37-.9-.51-1.24-.14-.34-.28-.29-.37-.3z" />
+  <svg viewBox="0 0 24 24" width="32" height="32" className="section-icon">
+    <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.17 8.17 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.46 0-2.9-.39-4.16-1.13l-.3-.18-3.09.81.83-3.01-.2-.31a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.23 8.24-8.23zm-3.61 3.41c-.2 0-.33.07-.46.22-.13.15-.51.5-.51 1.22s.53 1.42.6 1.52c.07.1 1.04 1.59 2.53 2.24.35.15.63.25.85.32.36.11.68.1.94.06.29-.04.9-.37 1.03-.72.13-.35.13-.66.09-.72-.04-.06-.14-.1-.3-.18-.16-.08-.94-.47-1.09-.52-.15-.05-.26-.08-.37.09-.11.17-.43.54-.53.65-.1.11-.2.13-.36.05-.16-.08-.68-.25-1.29-.8-0.48-.43-.8-0.95-.9-1.11-.1-.17-.01-.26.07-.34.08-.08.17-.2.25-.3.08-.1.11-.17.17-.29.06-.12.03-.22-.01-.3-.04-.08-.37-.9-.51-1.24-.14-.34-.28-.29-.37-.3z" />
   </svg>
 );
 
@@ -212,65 +178,18 @@ export default function WeddingInvitation() {
   return (
     <div className="invitation-container animate-fade-in">
 
-      {/* 1. Header Section (Cabecera) */}
-      <header className="header-section snap-section" style={{ backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url(/manos.png)' }}>
+
+      <header className="header-section snap-section" style={{ backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url(/portada.jpg)' }}>
         <div className="header-content-wrapper">
-          <p className="motivational-phrase animate-fade-in delay-1">
-            "Encontramos el amor y decidimos quedarnos en él para siempre"
-          </p>
-
-          <div className="monogram-container animate-fade-in delay-2">
-            <span className="monogram-letter">E</span>
-            <div className="monogram-divider"></div>
-            <span className="monogram-letter">F</span>
-          </div>
-
-          <h2 className="serif-title nuestra-boda-title animate-fade-in delay-2">
-            Nuestra Boda
-          </h2>
-        </div>
-
-        {/* Flecha indicadora de scroll intermitente */}
-        <div className="scroll-indicator">
-          <svg viewBox="0 0 24 24" className="scroll-arrow" fill="currentColor">
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-          </svg>
-        </div>
-      </header>
-
-      {/* 2. Presentación de los Novios */}
-      <section className="presentation-section snap-section">
-        <CornerEucalyptusLeft />
-        <CornerEucalyptusRight />
-        <p className="parents-text">
-          Con nuestro amor y la bendición de Dios
-        </p>
-
-        <p className="invite-text">
-          tenemos el honor de invitarte a nuestra boda
-        </p>
-
-        <div className="couple-names-wrapper">
-          <EucalyptusBranchLeft />
+          <h3 className="serif-title nuestra-boda-title animate-fade-in delay-2">
+            ¡NOS CASAMOS!
+          </h3>
           <h1 className="script-text couple-names">
             Eunice
             <div className="couple-connector">&</div>
             Franco
           </h1>
-          <EucalyptusBranchRight />
         </div>
-
-        {/* Elegant Date Highlight */}
-        <div className="date-highlight-container">
-          <div className="date-side-text">Sábado</div>
-          <div className="date-center-wrapper">
-            <span className="date-month">Octubre</span>
-            <span className="date-day">10</span>
-          </div>
-          <div className="date-side-text year">2026</div>
-        </div>
-
-        {/* Delicate Countdown Timer inside a Card */}
         <div className="countdown-card">
           <span className="countdown-card-title">FALTAN</span>
           <div className="countdown-container">
@@ -295,34 +214,45 @@ export default function WeddingInvitation() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 4. Fiesta - Ubicación */}
+      </header>
       <section className="location-section-snap snap-section">
         <CornerEucalyptusLeft />
         <CornerEucalyptusRight />
-        <div className="location-card">
+
+        <div className="date-card">
           <span className="location-time">CEREMONIA</span>
-          <h3 className="serif-title location-title">Salón Habibi</h3>
-          <h4 className="location-subtitle">Villa Quinteros</h4>
-          <p className="location-address">
+          <div className="date-highlight-container">
+            <div className="date-side-text">Sábado</div>
+            <div className="date-center-wrapper">
+              <span className="date-month">Octubre</span>
+              <span className="date-day">10</span>
+            </div>
+            <div className="date-side-text year">2026</div>
+          </div>
+          <p className="location-address" style={{ marginBottom: 0, marginTop: '0.5rem' }}>
             20 Hs
           </p>
+        </div>
+
+        <div className="location-card">
+          <PinIconCard />
+          <h3 className="serif-title location-title">Salón Habibi</h3>
+          <h4 className="location-subtitle">Villa Quinteros</h4>
           <a
             href="https://maps.google.com/?q=Salon+Habibi+Villa+Quinteros"
             target="_blank"
             rel="noopener noreferrer"
             className="primary-button"
+            style={{ marginTop: '0.8rem' }}
           >
-            <PinIcon /> Ver Ubicación
+            Ver Ubicación
           </a>
         </div>
       </section>
-
-      {/* 5. Pases Reservados (Dinámicos por URL) */}
-      <section className="passes-section-snap snap-section">
+      <section className="passes-tarjetas-section-snap snap-section">
         <CornerEucalyptusLeft />
         <CornerEucalyptusRight />
+
         <div className="passes-card">
           <TicketIcon />
           <h3 className="serif-title passes-title">Pases</h3>
@@ -336,12 +266,7 @@ export default function WeddingInvitation() {
             Por favor, confirma tu asistencia considerando esta cantidad de lugares.
           </p>
         </div>
-      </section>
 
-      {/* 6. Tarjetas y Transferencia */}
-      <section className="tarjetas-section-snap snap-section">
-        <CornerEucalyptusLeft />
-        <CornerEucalyptusRight />
         <div className="tarjeta-card">
           <TicketIconCard />
           <h3 className="serif-title tarjeta-title">Tarjetas</h3>
@@ -365,11 +290,10 @@ export default function WeddingInvitation() {
           </div>
         </div>
       </section>
-
-      {/* 7. Dress Code */}
-      <section className="dress-code-section-snap snap-section">
+      <section className="dress-rsvp-section-snap snap-section">
         <CornerEucalyptusLeft />
         <CornerEucalyptusRight />
+
         <div className="dress-code-card">
           <HangerIcon />
           <h3 className="serif-title dress-code-title">Dress Code</h3>
@@ -383,49 +307,17 @@ export default function WeddingInvitation() {
             </p>
           </div>
         </div>
-      </section>
 
-      {/* 8. Confirmación de Asistencia */}
-      <section className="rsvp-section snap-section">
-        <CornerEucalyptusLeft />
-        <CornerEucalyptusRight />
-        <div className="rsvp-icon">
+        <div className="rsvp-card">
           <WhatsappIcon />
-        </div>
-        <h3 className="serif-title rsvp-title">Confirmación</h3>
-        <p className="rsvp-description">
-          Agradecemos que confirmes tu asistencia antes del 10 de Septiembre de 2026
-        </p>
-        <button className="primary-button" onClick={handleConfirmRSVP}>
-          Enviar Mensaje
-        </button>
-      </section>
-
-      {/* 9. Aclaración y Cierre 
-      <section className="closing-section snap-section">
-        <CornerEucalyptusLeft />
-        <CornerEucalyptusRight />
-        <div className="adults-only-box">
-          <p className="adults-only-text">
-            Adoramos a sus hijos, pero creemos que necesitan una noche libre.
+          <h3 className="serif-title rsvp-title">Confirmación</h3>
+          <p className="rsvp-description">
+            Agradecemos que confirmes tu asistencia antes del 10 de Septiembre de 2026
           </p>
-          <span className="adults-only-highlight">SÓLO ADULTOS, POR FAVOR</span>
-          <SmallLeafDivider />
+          <button className="primary-button" onClick={handleConfirmRSVP}>
+            Enviar Mensaje
+          </button>
         </div>
-
-        <p className="thanks-phrase">
-          Esperamos contar con su presencia
-        </p>
-      </section>
-*/}
-      {/* 10. Segunda Fotografía + Footer */}
-      <section className="photo-wrapper snap-section">
-        <TornPaperEdgeTop />
-        <img
-          src="/novios_carreta.png"
-          alt="Eunice & Franco beso en la carreta"
-          className="wedding-photo"
-        />
 
         <footer className="invitation-footer">
           <p className="footer-copyright">Copyright &copy; 2026 Euni & Franco</p>
@@ -434,7 +326,6 @@ export default function WeddingInvitation() {
           </p>
         </footer>
       </section>
-
     </div>
   );
 }
