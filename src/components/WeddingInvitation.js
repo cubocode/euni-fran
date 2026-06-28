@@ -48,6 +48,26 @@ const TicketIcon = () => (
   </svg>
 );
 
+const HoneymoonIcon = () => (
+  <svg viewBox="0 0 24 24" width="32" height="32" className="section-icon">
+    <path fill="currentColor" d="M18 6h-2V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H6c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm8 15H6V8h12v11z" />
+    <path fill="var(--gold-accent)" d="M12 17l-1.45-1.32C5.4 11.08 2 8 2 4.5 2 1.74 4.18 0 7 0c1.54 0 3.04.99 3.75 2.25L12 3.5l1.25-1.25C13.96.99 15.46 0 17 0c2.82 0 5 1.74 5 4.5 0 3.5-3.4 6.58-8.55 11.18L12 17z" transform="translate(6, 9.5) scale(0.4)" />
+  </svg>
+);
+
+const CoupleIcon = () => (
+  <svg viewBox="0 0 64 64" width="60" height="60" className="couple-vector" style={{ color: 'var(--primary-color)', margin: '0 auto min(1.2vh, 0.5rem) auto', display: 'block' }}>
+    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--gold-accent)" strokeWidth="1.5" opacity="0.4" />
+    <path d="M32 6a26 26 0 0 1 26 26" fill="none" stroke="var(--gold-accent)" strokeWidth="1" opacity="0.6" />
+    <path d="M25 22c1.93 0 3.5-1.57 3.5-3.5S26.93 15 25 15s-3.5 1.57-3.5 3.5 1.57 3.5 3.5 3.5z" fill="currentColor" />
+    <path d="M20 26.5c0-.83.67-1.5 1.5-1.5h7c.83 0 1.5.67 1.5 1.5V36h-2v14h-3V38h-1v12h-3V36h-1V26.5z" fill="currentColor" />
+    <path d="M39 21.5c1.93 0 3.5-1.57 3.5-3.5S40.93 14.5 39 14.5s-3.5 1.57-3.5 3.5 1.57 3.5 3.5 3.5z" fill="currentColor" />
+    <path d="M34 26.5c0-.83.67-1.5 1.5-1.5h7c.83 0 1.5.67 1.5 1.5V33c0 2.2-1.8 4-4 4v13h-4V37c-2.2 0-4-1.8-4-4v-6.5z" fill="currentColor" />
+    <path d="M34.5 37l-2 13h8l-2-13z" fill="currentColor" opacity="0.9" />
+    <path d="M32 14c0-.5-.4-.9-.9-.9s-.9.4-.9.9c0 1 1.2 2 1.8 2.6.6-.6 1.8-1.6 1.8-2.6 0-.5-.4-.9-.9-.9s-.9.4-.9.9z" fill="var(--gold-accent)" />
+  </svg>
+);
+
 // Faint background watercolor corner decor
 const CornerEucalyptusLeft = () => (
   <svg viewBox="0 0 120 120" className="corner-decor top-left">
@@ -119,6 +139,7 @@ export default function WeddingInvitation() {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [copied, setCopied] = useState(false);
   const [numPasses] = useState(() => getNumPasses());
+  const [showHoneymoonAlias, setShowHoneymoonAlias] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -155,6 +176,11 @@ export default function WeddingInvitation() {
     } else {
       fallbackCopyText(aliasText, triggerSuccess);
     }
+  };
+
+  const handleHoneymoonClick = () => {
+    setShowHoneymoonAlias(!showHoneymoonAlias);
+    handleCopyAlias();
   };
 
   const fallbackCopyText = (text, onSuccess) => {
@@ -229,13 +255,11 @@ export default function WeddingInvitation() {
           <h3 className="serif-title passes-title">Ceremonia</h3>
           <p className="passes-subtitle">Te esperamos para celebrar</p>
           <div className="date-count-container">
-            <div className="date-highlight-container">
-              <div className="date-side-text">Sábado</div>
-              <div className="date-center-wrapper">
-                <span className="date-month">Octubre</span>
-                <span className="date-day">10</span>
-              </div>
-              <div className="date-side-text year">2026</div>
+            <div className="date-vertical-stack">
+              <span className="date-vertical-day">Sábado</span>
+              <span className="date-vertical-number">10</span>
+              <span className="date-vertical-month">de Octubre</span>
+              <span className="date-vertical-year">2026</span>
             </div>
           </div>
           <p className="date-footnote">20:00 Hs</p>
@@ -329,6 +353,38 @@ export default function WeddingInvitation() {
               A Franco
             </button>
           </div>
+        </div>
+      </section>
+
+      <section className="honeymoon-final-section-snap snap-section">
+        <CornerEucalyptusLeft />
+        <CornerEucalyptusRight />
+
+        <div className="honeymoon-card">
+          <HoneymoonIcon />
+          <h3 className="serif-title honeymoon-title">Luna de Miel</h3>
+          <p className="honeymoon-text">
+            Si desean hacernos algún obsequio, pueden contribuir a nuestra luna de miel
+          </p>
+          <button className="primary-button honeymoon-btn" onClick={handleHoneymoonClick}>
+            CONTRIBUIR
+          </button>
+
+          {showHoneymoonAlias && (
+            <div className="honeymoon-alias-box animate-fade-in">
+              <span className="transfer-label">ALIAS:</span>
+              <span className="transfer-alias">EUNICERUIZ98</span>
+              <button className="copy-button" onClick={handleCopyAlias}>
+                <CopyIcon /> {copied ? "¡Copiado!" : "Copiar"}
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div className="final-card">
+          <CoupleIcon />
+          <h3 className="serif-title final-title">EUNI & FRAN</h3>
+          <p className="final-subtitle">"De la mano hasta el fin"</p>
         </div>
 
         <footer className="invitation-footer">

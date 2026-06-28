@@ -272,52 +272,50 @@ body {
   transform: rotate(190deg) scaleY(-1);
 }
 
-.date-highlight-container {
+.date-vertical-stack {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2px;
   width: 100%;
-  margin: 0 auto;
+  text-align: center;
 }
 
-.date-side-text {
+.date-vertical-day {
   font-family: var(--font-sans);
-  font-size: min(1.6vh, 0.8rem);
+  font-size: min(1.8vh, 0.8rem);
   font-weight: 600;
   color: var(--primary-color);
   letter-spacing: 3px;
   text-transform: uppercase;
-  flex: 1;
-  text-align: right;
-  border-bottom: 2px solid var(--gold-accent);
-  padding-bottom: 6px;
 }
 
-.date-side-text.year {
-  text-align: left;
-}
-
-.date-center-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.date-month {
+.date-vertical-month {
   font-family: var(--font-sans);
   font-size: min(1.8vh, 0.85rem);
   font-weight: 700;
   letter-spacing: 4px;
   color: var(--secondary-color);
+  text-transform: uppercase;
+  margin-top: 2px;
 }
 
-.date-day {
+.date-vertical-number {
   font-family: var(--font-serif);
   font-size: min(6.5vh, 3rem);
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gold-accent);
+  line-height: 0.95;
+  margin: 2px 0;
+}
+
+.date-vertical-year {
+  font-family: var(--font-sans);
+  font-size: min(1.8vh, 0.8rem);
+  font-weight: 600;
   color: var(--primary-color);
-  line-height: 0.9;
+  letter-spacing: 3px;
 }
 
 .date-footnote {
@@ -404,6 +402,8 @@ body {
 .dress-code-card,
 .passes-card,
 .rsvp-card,
+.honeymoon-card,
+.final-card,
 .adults-only-box {
   background-color: #ffffff;
   padding: min(2.5vh, 1.6rem) 1.5rem;
@@ -422,6 +422,8 @@ body {
 .dress-code-card::after,
 .passes-card::after,
 .rsvp-card::after,
+.honeymoon-card::after,
+.final-card::after,
 .adults-only-box::after {
   content: '';
   position: absolute;
@@ -650,12 +652,15 @@ body {
 .dress-code-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   width: 100%;
   background-color: #f6f7f3;
   padding: min(1.5vh, 0.8rem);
   border-radius: 8px;
   border: 1px solid rgba(125, 133, 96, 0.25);
+  text-align: center;
 }
 
 .dress-rsvp-section-snap .dress-code-card {
@@ -664,6 +669,8 @@ body {
 
 .dress-code-row {
   font-size: min(2vh, 0.85rem);
+  text-align: center;
+  width: 100%;
 }
 
 .rsvp-icon svg {
@@ -875,6 +882,8 @@ body {
   .dress-code-card,
   .passes-card,
   .rsvp-card,
+  .honeymoon-card,
+  .final-card,
   .adults-only-box {
     padding: min(1.8vh, 0.8rem) 1.2rem;
   }
@@ -968,6 +977,8 @@ body {
   .dress-code-card,
   .passes-card,
   .rsvp-card,
+  .honeymoon-card,
+  .final-card,
   .adults-only-box {
     padding: min(1.5vh, 0.65rem) 0.8rem;
   }
@@ -1001,4 +1012,46 @@ body {
   .invitation-footer {
     margin-top: 0.2rem;
   }
+}
+
+.honeymoon-text {
+  font-size: min(1.8vh, 0.78rem);
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin-bottom: min(1.5vh, 0.6rem);
+}
+
+.honeymoon-btn {
+  margin-bottom: 0.2rem;
+}
+
+.honeymoon-alias-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  background-color: #f6f7f3;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(125, 133, 96, 0.25);
+  margin-top: 0.6rem;
+}
+
+.final-subtitle {
+  font-family: var(--font-serif);
+  font-size: min(2.5vh, 1.1rem);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-top: 0.4rem;
+}
+
+.couple-vector {
+  display: block;
+  margin: 0 auto min(1.2vh, 0.5rem) auto;
+}
+
+.honeymoon-final-section-snap .honeymoon-card {
+  margin-top: auto;
 }
