@@ -331,11 +331,9 @@ export default function WeddingInvitation() {
           <span className="dress-code-highlight">ELEGANTE</span>
           <div className="dress-code-details">
             <p className="dress-code-row">
-              <strong>Damas:</strong> Evitar tonos de blanco o beige
+              Tonos de blanco y beige reservados para la novia
             </p>
-            <p className="dress-code-row">
-              <strong>Caballeros:</strong> Traje
-            </p>
+
           </div>
         </div>
 
